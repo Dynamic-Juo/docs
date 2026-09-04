@@ -10,7 +10,14 @@
 
 ```text
 .
+├── AGENTS.md                       # Codex가 항상 따르는 문서 작성 규칙
 ├── README.md
+├── .agents/
+│   └── skills/                     # 반복 작업을 위한 Codex Skill
+│       ├── commit/
+│       │   └── SKILL.md
+│       └── refine-doc/
+│           └── SKILL.md
 ├── project/                         # 제품 범위와 프로젝트 운영 기준 (예정)
 │   ├── prd.md                       # 문제 정의, 사용자, 요구사항, MVP 범위
 │   └── project-plan.md              # 역할, 마일스톤, 일정, 위험
@@ -98,6 +105,7 @@
 
 ## 작성 규칙
 
+- 저장소 전체의 상세 작성 규칙은 `AGENTS.md`를 따른다.
 - 파일명은 영문 소문자와 하이픈을 사용한다.
 - 회의록은 `YYYY-MM-DD-topic.md` 형식을 사용한다.
 - ADR은 `NNN-decision-title.md` 형식을 사용한다.
