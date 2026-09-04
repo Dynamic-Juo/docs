@@ -1,6 +1,6 @@
 ---
 name: refine-doc
-description: 이 저장소의 PRD, 프로젝트 계획, 기술 설계, AI 파이프라인, 회의록, ADR와 평가 문서 초안을 문서 기준과 템플릿에 맞춰 자연스러운 한국어 문서로 다듬을 때 사용한다. 새로운 사실을 조사하거나 초안 없이 내용을 대신 기획하는 작업에는 사용하지 않는다.
+description: 이 저장소의 PRD, 프로젝트 계획, 기술 설계, AI 파이프라인, 회의록, ADR과 평가 문서 초안을 문서 기준과 템플릿에 맞춰 자연스러운 한국어 문서로 다듬을 때 사용한다. 새로운 사실을 조사하거나 초안 없이 내용을 대신 기획하는 작업에는 사용하지 않는다.
 ---
 
 # Refine Document
@@ -12,8 +12,26 @@ description: 이 저장소의 PRD, 프로젝트 계획, 기술 설계, AI 파이
 1. 저장소의 `AGENTS.md`를 모두 읽는다.
 2. `README.md`에서 대상 문서의 책임과 분리 기준을 확인한다.
 3. 대상 문서의 종류와 상태를 식별한다.
-4. `templates/`에 해당 문서의 템플릿이 있으면 모두 읽는다.
+4. 아래 대응표에서 대상 문서에 맞는 템플릿 하나를 찾아 전체를 읽는다.
 5. 관련 기준 문서가 있으면 필요한 범위만 확인한다.
+
+## 템플릿 선택
+
+| 대상 문서 | 템플릿 |
+| --- | --- |
+| `meetings/*.md` | `templates/meeting.md` |
+| `project/prd.md` | `templates/prd.md` |
+| `project/project-plan.md` | `templates/project-plan.md` |
+| `design/system-overview.md` | `templates/system-overview.md` |
+| `design/ai-pipeline.md` | `templates/ai-pipeline.md` |
+| `adr/*.md` | `templates/adr.md` |
+| `evaluations/*.md` | `templates/evaluation.md` |
+
+- 대응하는 템플릿 파일이 존재하면 대상 문서를 작성하거나 수정하기 전에 반드시 읽는다.
+- 아직 생성되지 않은 템플릿은 없는 것으로 취급한다. 다른 템플릿을 대신 적용하거나 새 구조를 임의로 만들지 않는다.
+- 템플릿이 없으면 `AGENTS.md`와 `README.md`만 기준으로 다듬고, 결과 보고에 템플릿이 없음을 알린다.
+- 템플릿의 제목과 섹션 구조는 따르되, 초안에 없는 사실은 채우지 않는다.
+- 완성된 문서에는 템플릿의 작성 안내용 HTML 주석과 예시 값을 남기지 않는다.
 
 ## 편집 원칙
 
