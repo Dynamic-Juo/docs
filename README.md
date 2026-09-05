@@ -25,11 +25,11 @@
 │       │   └── SKILL.md
 │       └── refine-doc/
 │           └── SKILL.md
-├── project/                         # 제품 범위와 프로젝트 운영 기준 (예정)
+├── project/                         # 제품 범위와 프로젝트 운영 기준
 │   ├── prd.md                       # 문제 정의, 사용자, 요구사항, MVP 범위
-│   └── project-plan.md              # 역할, 마일스톤, 일정, 위험
+│   └── project-plan.md              # 역할, 마일스톤, 일정, 위험 (예정)
 ├── design/                          # 제품과 AI 시스템 설계 (예정)
-│   ├── system-overview.md           # FE, BE, AI 파이프라인의 전체 구성
+│   ├── system-overview.md           # FE, BE, AI 파이프라인의 전체 구성 (예정)
 │   └── ai-pipeline.md               # 단계별 AI 처리, 후보 기술, 평가 기준
 ├── templates/                       # 반복 작성하는 문서의 공통 골격
 │   └── meeting.md                   # 회의록 템플릿
@@ -38,7 +38,7 @@
 └── adr/                             # 확정된 주요 기술 결정
 ```
 
-`project/`와 `design/`은 각 문서의 초안을 작성할 때 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
+`project/prd.md`와 `design/ai-pipeline.md`는 초안을 작성 중이다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
 
 ## 문서별 책임
 
