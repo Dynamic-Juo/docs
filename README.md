@@ -4,6 +4,8 @@
 
 프로젝트는 [Wanted AI Championship 2026](https://event.wanted.co.kr/ai-championship/2026) 출품을 목표로 진행한다.
 
+현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다.
+
 ## 팀 구성
 
 | 이름 | 직책 |
@@ -27,7 +29,7 @@
 │           └── SKILL.md
 ├── project/                         # 제품 범위와 프로젝트 운영 기준
 │   ├── prd.md                       # 문제 정의, 사용자, 요구사항, MVP 범위
-│   └── project-plan.md              # 역할, 마일스톤, 일정, 위험 (예정)
+│   └── project-plan.md              # 역할, 마일스톤, 일정, 위험
 ├── design/                          # 제품과 AI 시스템 설계 (예정)
 │   ├── system-overview.md           # FE, BE, AI 파이프라인의 전체 구성 (예정)
 │   └── ai-pipeline.md               # 단계별 AI 처리, 후보 기술, 평가 기준
@@ -38,7 +40,7 @@
 └── adr/                             # 확정된 주요 기술 결정
 ```
 
-`project/prd.md`와 `design/ai-pipeline.md`는 초안을 작성 중이다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
+`project/prd.md`, `project/project-plan.md`와 `design/ai-pipeline.md`는 초안을 작성 중이다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
 
 ## 문서별 책임
 
@@ -109,7 +111,7 @@
 | 기술 후보 비교와 실험 결과 | `evaluations/` |
 | 확정된 주요 기술 결정 | `adr/` |
 | 회의 당시의 논의와 액션 아이템 | `meetings/` |
-| 구현 작업과 완료 조건 | GitHub Issue |
+| 구현 작업과 완료 조건 | 관리 방식 미정 |
 | 코드 변경 이유와 검증 결과 | 각 개발 저장소의 Pull Request |
 
 ## 브랜치 운영
