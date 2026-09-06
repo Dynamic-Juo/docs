@@ -4,7 +4,7 @@
 
 프로젝트는 [Wanted AI Championship 2026](https://event.wanted.co.kr/ai-championship/2026) 출품을 목표로 진행한다.
 
-현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다.
+현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다. 추가 기획과 MVP 확정을 위한 논의 항목은 [MVP 검토 목록](project/mvp-review.md)에 모았다.
 
 ## 팀 구성
 
