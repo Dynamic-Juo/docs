@@ -4,7 +4,7 @@
 
 프로젝트는 [Wanted AI Championship 2026](https://event.wanted.co.kr/ai-championship/2026) 출품을 목표로 진행한다.
 
-현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다. 추가 기획과 MVP 확정을 위한 논의 항목은 [MVP 검토 목록](project/mvp-review.md)에 모았다.
+현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다. MVP 결정 기록과 남은 기술 검증 항목은 [MVP 검토 목록](project/mvp-review.md)에 모았다.
 
 ## 팀 구성
 
@@ -25,10 +25,13 @@
 │   └── skills/                     # 반복 작업을 위한 Codex Skill
 │       ├── commit/
 │       │   └── SKILL.md
+│       ├── pr/
+│       │   └── SKILL.md
 │       └── refine-doc/
 │           └── SKILL.md
 ├── project/                         # 제품 범위와 프로젝트 운영 기준
 │   ├── assumptions.md               # 문제·사용자·범위와 초기 구현 가정
+│   ├── mvp-review.md                # MVP 결정 기록과 남은 기술 검증 항목
 │   ├── prd.md                       # 문제 정의, 사용자, 요구사항, MVP 범위
 │   └── project-plan.md              # 역할, 마일스톤, 일정, 위험
 ├── design/                          # 제품과 AI 시스템 설계
@@ -44,13 +47,14 @@
 └── adr/                             # 확정된 주요 기술 결정
 ```
 
-`project/prd.md`, `project/project-plan.md`, `design/ai-pipeline.md`, `design/analysis-runtime.md`와 `design/result-ui.md`는 초안을 작성 중이다. `design/evidence-policy.md`는 합의한 주장 판정 기준으로 사용한다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
+`project/prd.md`, `project/project-plan.md`, `project/mvp-review.md`, `design/ai-pipeline.md`, `design/analysis-runtime.md`와 `design/result-ui.md`는 초안을 작성 중이다. `project/assumptions.md`와 `design/evidence-policy.md`는 합의한 현재 기준으로 사용한다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
 
 ## 문서별 책임
 
 | 위치 | 다루는 내용 | 다루지 않는 내용 |
 | --- | --- | --- |
 | `project/assumptions.md` | 문제의식, 사용자·범위와 초기 구현 방향의 가정 | 확인된 사실, MVP 요구사항과 성공 기준 |
+| `project/mvp-review.md` | MVP 결정 기록, 항목별 상태와 남은 기술 검증 범위 | 현재 요구사항의 상세 명세, 일정별 진행 현황 |
 | `project/prd.md` | 문제 정의, 목표 사용자, 사용자 시나리오, 요구사항, MVP와 제외 범위, 성공 기준 | 기술 구현 상세, 일정별 작업 현황 |
 | `project/project-plan.md` | 역할, 마일스톤, 일정, 작업 기준, 일정 위험 | 회의 당시의 대화, 상세 기능 명세 |
 | `design/system-overview.md` | FE, BE, AI 분석 구성요소의 책임과 데이터 흐름 | 모델별 실험 결과, 작업 일정 |
@@ -68,7 +72,7 @@
 
 제품은 다음 두 분석 결과를 구분한다.
 
-1. 미디어 조작 탐지: 영상이나 인물의 얼굴 및 음성이 합성되었을 가능성을 분석한다.
+1. 미디어 조작 탐지: 인물의 얼굴 합성·변형과 영상 전체가 AI로 생성되었을 가능성을 분석한다.
 2. 주장 사실성 검증: 영상에서 검증 가능한 주장을 추출하고 외부 근거와 비교한다.
 
 두 결과는 하나의 진위 판정으로 취급하지 않는다. 실제 인물이 등장한 영상에도 허위 주장이 포함될 수 있고, 합성된 영상의 발언 내용이 사실일 수도 있기 때문이다. 제품 표시 방식은 `prd.md`에서, 처리 방식은 `ai-pipeline.md`에서 정의한다.
