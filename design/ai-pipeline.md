@@ -124,19 +124,19 @@ MVP는 Firestore 실시간 구독, WebSocket과 SSE를 사용하지 않고 `jobI
 
 모든 후보의 라이선스와 사용 조건은 미확인이다. 코드뿐 아니라 사용하려는 모델 가중치와 데이터의 조건도 별도로 확인해야 한다. 외부 API와 서비스는 오픈소스와 구분해 검토한다.
 
-| 영역 | 기술 후보·출처 | 선정 전 확인할 내용 |
-| --- | --- | --- |
-| 영상 확보 | [yt-dlp](https://github.com/yt-dlp/yt-dlp) | 실제 입력에서 영상·음성 수집 가능 여부와 서비스 이용 조건. 자막 확보는 MVP 이후 선택적 경로에서 검토 |
-| 영상·이미지 처리 | FFmpeg, OpenCV | 공식 출처 링크 확인 필요. 공식 출처·라이선스와 필요한 처리 범위 확인 |
-| 얼굴 검출 | [MediaPipe](https://github.com/google-ai-edge/mediapipe) | 선정 모델에 필요한 얼굴 검출·전처리와 호환되는지 확인 |
-| 음성 인식 | [Whisper](https://github.com/openai/whisper), [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | 한국어 입력 품질, 실행 환경, 처리 시간·메모리 비교 |
-| 시간 정보 정렬 | [WhisperX](https://github.com/m-bain/whisperX) | 기본 시간 정보로 충분한지, 추가 정렬의 필요성과 비용 확인 |
-| 조작 탐지 모델 비교 | [DeepfakeBench](https://github.com/SCLBD/DeepfakeBench) | 실제 사용할 개별 모델, 가중치, 탐지 범위와 실행 조건 확인 |
-| 주장 추출 | 일반 LLM과 구조화된 출력 | 구체적인 모델·제공 방식·비용은 미정 |
-| 기존 팩트체크 검색 | [Google Fact Check Tools API](https://developers.google.com/fact-check/tools/api) | 한국어 주장 검색 결과, 접근 조건과 제한 확인 |
-| 뉴스 검색 | [GDELT](https://www.gdeltproject.org/) | 한국어 검색 품질, API 사용 조건과 원문 확보 방식 확인 |
-| 국내 근거 검색 | 네이버 뉴스, Google News, 국내 언론사·정부·공공기관 자료 | 검색·접근 수단과 공식 출처·사용 조건은 미정 |
-| 주장과 근거 비교 | LLM, NLI 또는 조합 | 구체적인 모델과 한국어 판정 품질은 미정 |
+| 영역 | 기술 후보 | 출처 | 선정 전 확인할 내용 |
+| --- | --- | --- | --- |
+| 영상 확보 | yt-dlp | [GitHub](https://github.com/yt-dlp/yt-dlp) | 실제 입력에서 영상·음성 수집 가능 여부와 서비스 이용 조건. 자막 확보는 MVP 이후 선택적 경로에서 검토 |
+| 영상·이미지 처리 | FFmpeg, OpenCV | 확인 필요 | 공식 출처·라이선스와 필요한 처리 범위 확인 |
+| 얼굴 검출 | MediaPipe | [GitHub](https://github.com/google-ai-edge/mediapipe) | 선정 모델에 필요한 얼굴 검출·전처리와 호환되는지 확인 |
+| 음성 인식 | Whisper, faster-whisper | [Whisper](https://github.com/openai/whisper), [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | 한국어 입력 품질, 실행 환경, 처리 시간·메모리 비교 |
+| 시간 정보 정렬 | WhisperX | [GitHub](https://github.com/m-bain/whisperX) | 기본 시간 정보로 충분한지, 추가 정렬의 필요성과 비용 확인 |
+| 조작 탐지 모델 비교 | DeepfakeBench | [GitHub](https://github.com/SCLBD/DeepfakeBench) | 실제 사용할 개별 모델, 가중치, 탐지 범위와 실행 조건 확인 |
+| 주장 추출 | 일반 LLM과 구조화된 출력 | 미정 | 구체적인 모델·제공 방식·비용은 미정 |
+| 기존 팩트체크 검색 | Google Fact Check Tools API | [공식 문서](https://developers.google.com/fact-check/tools/api) | 한국어 주장 검색 결과, 접근 조건과 제한 확인 |
+| 뉴스 검색 | GDELT | [공식 사이트](https://www.gdeltproject.org/) | 한국어 검색 품질, API 사용 조건과 원문 확보 방식 확인 |
+| 국내 근거 검색 | 네이버 뉴스, Google News, 국내 언론사·정부·공공기관 자료 | 미정 | 검색·접근 수단과 공식 출처·사용 조건은 미정 |
+| 주장과 근거 비교 | LLM, NLI 또는 조합 | 미정 | 구체적인 모델과 한국어 판정 품질은 미정 |
 
 초기 조사에서 수집한 조작 탐지 후보는 Xception, MesoNet, EfficientNet, Face X-Ray, F3Net, SBI, LSDA, Effort, TALL, I3D, STIL, FTCN, X-CLIP, TimeTransformer, VideoMAE다. 각 후보의 지원 여부와 적합성은 확인 전이며, 이 목록을 테스트 대상이나 우선순위로 확정하지 않는다.
 
