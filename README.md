@@ -28,6 +28,7 @@
 │       └── refine-doc/
 │           └── SKILL.md
 ├── project/                         # 제품 범위와 프로젝트 운영 기준
+│   ├── assumptions.md               # 문제·사용자·범위와 초기 구현 가정
 │   ├── prd.md                       # 문제 정의, 사용자, 요구사항, MVP 범위
 │   └── project-plan.md              # 역할, 마일스톤, 일정, 위험
 ├── design/                          # 제품과 AI 시스템 설계
@@ -49,6 +50,7 @@
 
 | 위치 | 다루는 내용 | 다루지 않는 내용 |
 | --- | --- | --- |
+| `project/assumptions.md` | 문제의식, 사용자·범위와 초기 구현 방향의 가정 | 확인된 사실, MVP 요구사항과 성공 기준 |
 | `project/prd.md` | 문제 정의, 목표 사용자, 사용자 시나리오, 요구사항, MVP와 제외 범위, 성공 기준 | 기술 구현 상세, 일정별 작업 현황 |
 | `project/project-plan.md` | 역할, 마일스톤, 일정, 작업 기준, 일정 위험 | 회의 당시의 대화, 상세 기능 명세 |
 | `design/system-overview.md` | FE, BE, AI 분석 구성요소의 책임과 데이터 흐름 | 모델별 실험 결과, 작업 일정 |
@@ -111,6 +113,7 @@
 
 | 기록 | 관리 위치 |
 | --- | --- |
+| 문제·사용자·범위와 초기 구현 가정 | `project/assumptions.md` |
 | 제품 요구사항과 MVP 범위 | `project/prd.md` |
 | 일정과 역할의 현재 기준 | `project/project-plan.md` |
 | 시스템 및 AI 처리 설계 | `design/` |
