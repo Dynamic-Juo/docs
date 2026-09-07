@@ -33,7 +33,8 @@
 ├── design/                          # 제품과 AI 시스템 설계
 │   ├── system-overview.md           # FE, BE, AI 파이프라인의 전체 구성 (예정)
 │   ├── ai-pipeline.md               # 단계별 AI 처리, 후보 기술, 평가 기준
-│   └── analysis-runtime.md          # 분석 실행 구조, 상태, 처리량과 확장 기준
+│   ├── analysis-runtime.md          # 분석 실행 구조, 상태, 처리량과 확장 기준
+│   └── result-ui.md                 # 분석 진행, 순차 결과와 최종 요약 UI 흐름
 ├── templates/                       # 반복 작성하는 문서의 공통 골격
 │   └── meeting.md                   # 회의록 템플릿
 ├── meetings/                        # 회의별 논의와 결정 기록
@@ -41,7 +42,7 @@
 └── adr/                             # 확정된 주요 기술 결정
 ```
 
-`project/prd.md`, `project/project-plan.md`, `design/ai-pipeline.md`와 `design/analysis-runtime.md`는 초안을 작성 중이다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
+`project/prd.md`, `project/project-plan.md`, `design/ai-pipeline.md`, `design/analysis-runtime.md`와 `design/result-ui.md`는 초안을 작성 중이다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
 
 ## 문서별 책임
 
@@ -52,6 +53,7 @@
 | `design/system-overview.md` | FE, BE, AI 분석 구성요소의 책임과 데이터 흐름 | 모델별 실험 결과, 작업 일정 |
 | `design/ai-pipeline.md` | 영상 확보부터 미디어 조작 탐지와 주장 검증까지의 처리 단계 | 제품 요구사항 원문, 확정된 결정의 이력 |
 | `design/analysis-runtime.md` | 작업 대기열과 Worker, 실행 상태, 동시 처리, 성능 측정과 확장 기준 | 단계별 분석 방법, 제품 요구사항 원문 |
+| `design/result-ui.md` | 진행 상태, 주장 카드의 순차 갱신, 미디어 조작 결과와 최종 요약 흐름 | API·모델 구현 상세, 제품 요구사항 원문 |
 | `meetings/` | 회의 시점의 논의, 결정 사항, 미결 사항, 액션 아이템 | 변경되는 최신 일정과 제품 기준 |
 | `adr/` | 되돌리기 어렵거나 영향 범위가 큰 기술 결정과 근거 | 후보 기술 전체의 상세 비교, 회의 전체 내용 |
 | `templates/` | 반복 작성하는 문서의 필수 항목과 공통 구조 | 프로젝트의 실제 내용과 확정된 결정 |

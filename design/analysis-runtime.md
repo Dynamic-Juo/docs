@@ -1,7 +1,7 @@
 # Conan AI (가제) 분석 실행 구조와 확장 기준
 
 - 상태: `Draft`
-- 관련 문서: [제품 요구사항](../project/prd.md), [MVP 검토 목록](../project/mvp-review.md), [AI 파이프라인](ai-pipeline.md), [프로젝트 계획](../project/project-plan.md)
+- 관련 문서: [제품 요구사항](../project/prd.md), [MVP 검토 목록](../project/mvp-review.md), [AI 파이프라인](ai-pipeline.md), [분석 결과 UI](result-ui.md), [프로젝트 계획](../project/project-plan.md)
 
 ## 문서의 기준
 
@@ -68,7 +68,7 @@ flowchart LR
 | `failed` | 자료 확보 실패나 실행 오류로 더 진행할 수 없다. | 재시도 정책에 따라 새 작업을 생성할 수 있으며 세부 기준은 미정 |
 | `timed_out` | 분석 시작 후 최대 처리 시간을 초과했다. | 완료된 결과를 보존하고 끝나지 않은 항목을 시간 초과로 표시 |
 
-대기열에서 기다린 시간과 Worker가 작업을 시작한 뒤의 분석 시간을 구분한다. 최대 10분의 처리 제한은 `processing`으로 전환한 시점부터 계산한다. 화면에는 대기 상태와 분석 진행 상태를 구분해 표시한다.
+대기열에서 기다린 시간과 Worker가 작업을 시작한 뒤의 분석 시간을 구분한다. 최대 10분의 처리 제한은 `processing`으로 전환한 시점부터 계산한다. 화면에는 대기 상태와 분석 진행 상태를 구분해 표시하며, 구체적인 상태 표현은 [분석 진행과 결과 UI](result-ui.md)를 따른다.
 
 ## 처리 시간 기준
 
