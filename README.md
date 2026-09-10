@@ -4,7 +4,7 @@
 
 프로젝트는 [Wanted AI Championship 2026](https://event.wanted.co.kr/ai-championship/2026) 출품을 목표로 진행한다.
 
-현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다.
+현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다. MVP 결정 기록과 남은 기술 검증 항목은 [MVP 검토 목록](project/mvp-review.md)에 모았다.
 
 ## 팀 구성
 
@@ -25,14 +25,21 @@
 │   └── skills/                     # 반복 작업을 위한 Codex Skill
 │       ├── commit/
 │       │   └── SKILL.md
+│       ├── pr/
+│       │   └── SKILL.md
 │       └── refine-doc/
 │           └── SKILL.md
 ├── project/                         # 제품 범위와 프로젝트 운영 기준
+│   ├── assumptions.md               # 문제·사용자·범위와 초기 구현 가정
+│   ├── mvp-review.md                # MVP 결정 기록과 남은 기술 검증 항목
 │   ├── prd.md                       # 문제 정의, 사용자, 요구사항, MVP 범위
 │   └── project-plan.md              # 역할, 마일스톤, 일정, 위험
-├── design/                          # 제품과 AI 시스템 설계 (예정)
+├── design/                          # 제품과 AI 시스템 설계
 │   ├── system-overview.md           # FE, BE, AI 파이프라인의 전체 구성 (예정)
-│   └── ai-pipeline.md               # 단계별 AI 처리, 후보 기술, 평가 기준
+│   ├── ai-pipeline.md               # 단계별 AI 처리, 후보 기술, 평가 기준
+│   ├── analysis-runtime.md          # 분석 실행 구조, 상태, 처리량과 확장 기준
+│   ├── evidence-policy.md           # 주장 근거 선택, 출처 충돌과 판정 기준
+│   └── result-ui.md                 # 분석 진행, 순차 결과와 최종 요약 UI 흐름
 ├── templates/                       # 반복 작성하는 문서의 공통 골격
 │   └── meeting.md                   # 회의록 템플릿
 ├── meetings/                        # 회의별 논의와 결정 기록
@@ -40,16 +47,21 @@
 └── adr/                             # 확정된 주요 기술 결정
 ```
 
-`project/prd.md`, `project/project-plan.md`와 `design/ai-pipeline.md`는 초안을 작성 중이다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
+`project/prd.md`, `project/project-plan.md`, `project/mvp-review.md`, `design/ai-pipeline.md`, `design/analysis-runtime.md`와 `design/result-ui.md`는 초안을 작성 중이다. `project/assumptions.md`와 `design/evidence-policy.md`는 합의한 현재 기준으로 사용한다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
 
 ## 문서별 책임
 
 | 위치 | 다루는 내용 | 다루지 않는 내용 |
 | --- | --- | --- |
+| `project/assumptions.md` | 문제의식, 사용자·범위와 초기 구현 방향의 가정 | 확인된 사실, MVP 요구사항과 성공 기준 |
+| `project/mvp-review.md` | MVP 결정 기록, 항목별 상태와 남은 기술 검증 범위 | 현재 요구사항의 상세 명세, 일정별 진행 현황 |
 | `project/prd.md` | 문제 정의, 목표 사용자, 사용자 시나리오, 요구사항, MVP와 제외 범위, 성공 기준 | 기술 구현 상세, 일정별 작업 현황 |
 | `project/project-plan.md` | 역할, 마일스톤, 일정, 작업 기준, 일정 위험 | 회의 당시의 대화, 상세 기능 명세 |
 | `design/system-overview.md` | FE, BE, AI 분석 구성요소의 책임과 데이터 흐름 | 모델별 실험 결과, 작업 일정 |
 | `design/ai-pipeline.md` | 영상 확보부터 미디어 조작 탐지와 주장 검증까지의 처리 단계 | 제품 요구사항 원문, 확정된 결정의 이력 |
+| `design/analysis-runtime.md` | 작업 대기열과 Worker, 실행 상태, 동시 처리, 성능 측정과 확장 기준 | 단계별 분석 방법, 제품 요구사항 원문 |
+| `design/evidence-policy.md` | 주장과 근거의 관련성·시점·출처 확인, 판정과 출처 충돌 처리 기준 | 검색·판정 기술 선정, 모델별 실험 결과 |
+| `design/result-ui.md` | 진행 상태, 주장 카드의 순차 갱신, 미디어 조작 결과와 최종 요약 흐름 | API·모델 구현 상세, 제품 요구사항 원문 |
 | `meetings/` | 회의 시점의 논의, 결정 사항, 미결 사항, 액션 아이템 | 변경되는 최신 일정과 제품 기준 |
 | `adr/` | 되돌리기 어렵거나 영향 범위가 큰 기술 결정과 근거 | 후보 기술 전체의 상세 비교, 회의 전체 내용 |
 | `templates/` | 반복 작성하는 문서의 필수 항목과 공통 구조 | 프로젝트의 실제 내용과 확정된 결정 |
@@ -60,7 +72,7 @@
 
 제품은 다음 두 분석 결과를 구분한다.
 
-1. 미디어 조작 탐지: 영상이나 인물의 얼굴 및 음성이 합성되었을 가능성을 분석한다.
+1. 미디어 조작 탐지: 인물의 얼굴 합성·변형과 영상 전체가 AI로 생성되었을 가능성을 분석한다.
 2. 주장 사실성 검증: 영상에서 검증 가능한 주장을 추출하고 외부 근거와 비교한다.
 
 두 결과는 하나의 진위 판정으로 취급하지 않는다. 실제 인물이 등장한 영상에도 허위 주장이 포함될 수 있고, 합성된 영상의 발언 내용이 사실일 수도 있기 때문이다. 제품 표시 방식은 `prd.md`에서, 처리 방식은 `ai-pipeline.md`에서 정의한다.
@@ -105,6 +117,7 @@
 
 | 기록 | 관리 위치 |
 | --- | --- |
+| 문제·사용자·범위와 초기 구현 가정 | `project/assumptions.md` |
 | 제품 요구사항과 MVP 범위 | `project/prd.md` |
 | 일정과 역할의 현재 기준 | `project/project-plan.md` |
 | 시스템 및 AI 처리 설계 | `design/` |
@@ -129,7 +142,9 @@
 - 회의록은 `YYYY-MM-DD-topic.md` 형식을 사용한다.
 - ADR은 `NNN-decision-title.md` 형식을 사용한다.
 - 문서 본문은 평서체로 통일한다.
+- 표의 각 열에는 하나의 독립된 속성만 기록한다. 상태·시점, 담당자·기한, 근거·결정일처럼 별도로 갱신하는 값은 각각 다른 열에 둔다.
 - 코드 블록 내부를 제외하고 문서 요소 사이의 빈 줄은 한 줄만 사용하며, 편집 후 연속 빈 줄이 남지 않았는지 확인한다.
+- 범위를 나타내는 `~` 앞뒤에는 공백을 둔다. 예: `M-01 ~ M-08`, `1 ~ 2초`.
 - 같은 내용을 여러 문서에 복사하지 않고 기준 문서를 링크한다.
 - 사실, 결정, 가설과 미결 사항을 구분해서 작성한다.
 - 수치에는 측정 조건이나 출처를 함께 기록한다.
