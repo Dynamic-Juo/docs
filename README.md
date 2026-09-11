@@ -22,13 +22,17 @@
 ├── AGENTS.md                       # Codex가 항상 따르는 문서 작성 규칙
 ├── README.md
 ├── .agents/
-│   └── skills/                     # 반복 작업을 위한 Codex Skill
+│   └── skills/                     # 반복 작업을 위한 Skill 원본
 │       ├── commit/
 │       │   └── SKILL.md
 │       ├── pr/
 │       │   └── SKILL.md
 │       └── refine-doc/
 │           └── SKILL.md
+├── .claude/
+│   └── skills/                     # .agents/skills 의 각 Skill을 가리키는 심볼릭 링크
+├── .vscode/
+│   └── settings.json               # 마크다운 저장 시 포맷 비활성화
 ├── project/                         # 제품 범위와 프로젝트 운영 기준
 │   ├── assumptions.md               # 문제·사용자·범위와 초기 구현 가정
 │   ├── mvp-review.md                # MVP 결정 기록과 남은 기술 검증 항목
@@ -46,6 +50,8 @@
 │   └── 2026-09-03-kickoff.md
 └── adr/                             # 확정된 주요 기술 결정
 ```
+
+Skill 원본은 `.agents/skills/`에 두고 `.claude/skills/`에는 같은 이름의 심볼릭 링크를 둔다. 도구마다 Skill을 찾는 경로가 달라 두 경로가 모두 필요하지만, 내용은 원본 한 곳에서만 관리한다. 링크는 상대 경로로 걸어 저장소 위치와 무관하게 동작한다.
 
 `project/prd.md`, `project/project-plan.md`, `project/mvp-review.md`, `design/ai-pipeline.md`, `design/analysis-runtime.md`와 `design/result-ui.md`는 초안을 작성 중이다. `project/assumptions.md`와 `design/evidence-policy.md`는 합의한 현재 기준으로 사용한다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
 
