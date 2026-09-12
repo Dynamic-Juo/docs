@@ -25,7 +25,7 @@
 | 문서 공유 | docs `docs/midpoint-review` | 작업 브랜치로 공유, 새 PR·기존 PR 수정 없음 |
 | 백엔드 변경 | be main `38bd16263afbf79daffd67878277c3af0a4a5d51` | [BE PR #2](https://github.com/Dynamic-Juo/be/pull/2) 병합 완료, 실제 서버 배포 미실행 |
 | 배포 이미지 | [main CI](https://github.com/Dynamic-Juo/be/actions/runs/34625602926) | ARM64 빌드·격리 테스트·GHCR 게시 성공 |
-| 기존 개발계 | 과거 기록의 `conan-staging`, 이미지 `conan-be:472aff7` | 브라우저 확인만 수행, 서버 명령과 이미지 교체는 하지 않음 |
+| 기존 개발계 | 승인된 조회에서 `conan-staging`, 이미지 `conan-be:472aff7` | healthy·재시작 0·OOM false, 이미지 교체는 하지 않음 |
 | 일반 사용자 운영계 | 생성·공개 여부를 이번에 변경하지 않음 | 공개 전 보안·품질 검증과 별도 승인 필요 |
 
 과거 배포 기록의 개발 API는 `https://conan-api-dev.dotseven.cloud`다. Cloudflare Access는 소유자 이메일만 허용한 것으로 기록돼 있다. 현재 서버 환경변수와 Access 정책 전체를 이번 작업에서 조회한 것은 아니다.
@@ -35,6 +35,10 @@
 2026-09-12 API·Swagger 보완 때의 로컬 모의 검증은 `328 passed, 2 warnings`다. 자막 기본값을 기존 manual로 복원한 be `5ed4441`에서는 전체 `329 passed, 2 warnings (7.53초)`를 확인했다. Python DNS/TCP 차단 fixture를 사용했으며 실제 영상·외부 제공자·맥미니 컨테이너 검증이 아니다. 별도의 [PR ARM64 CI](https://github.com/Dynamic-Juo/be/actions/runs/34625294517)는 성공했고, main에서도 ARM64 이미지 빌드와 `--network none` 테스트가 통과했다. 이미지 게시 결과는 위 표를 따른다. 기존 점검 보고서의 314건은 2026-09-11 당시 수치로 보존한다.
 
 ## 2026-09-12 개발계 확인 범위
+
+승인받은 읽기 전용 점검에서 서버 HEAD `472aff7`, Compose v5.1.2와 기존 Compose 설정 검증 성공을 확인했다. 내부 `/ready`는 ready이며 진행·대기 작업은 0건이었다. CORS는 `http://localhost:3000`만 허용한다. 기존 다른 7개 서비스도 실행 중이었다. 이 결과는 실제 영상 분석이나 새 릴리스 검증이 아니다.
+
+서버의 `.env.example` 삭제 변경은 보존하며 `git pull`하지 않는다. 외부 네트워크 `conan-staging-ingress`와 모델 캐시 볼륨을 유지하고, 별도 override에 검증 이미지와 Vercel Origin만 지정하는 교체안을 제시했다. 실제 파일 생성·이미지 pull·컨테이너 교체는 승인 대기 중이다. 비밀값·기존 환경 파일·Tunnel은 변경하지 않았다.
 
 | 확인 | 관찰 결과 | 확인하지 못한 것 |
 | --- | --- | --- |
@@ -79,12 +83,15 @@ Swagger를 프론트 담당자에게 보여주기 위해 Access를 전체 공개
 | 확인 항목 | 담당자 | 상태 | 확인 시점 |
 | --- | --- | --- | --- |
 | 프론트 담당자의 개발계 Access 허용 이메일 | 조정준 팀장 | 로그인 확인에 사용한 계정 외 추가 대상 미확인 | 연동 전 |
-| Vercel 고정 프론트 Origin | 조정준 팀장 | 사용자 답변 대기 | 미정 |
+| Vercel 고정 프론트 Origin | 조정준 팀장 | `https://kimjeonil.vercel.app` 확인, 서버 CORS 반영 전 | 2026-09-12 |
+| 프론트 실 API 클라이언트 | 조정준 팀장 | 사용자 지정 담당. `Dynamic-Juo/fe` main `8c3bb9c`의 접수·폴링 미구현 확인, FE 코드·PR·배포는 수정하지 않음 | 연동 전 |
 | 로그인 후 Swagger 열기와 schema 확인 | 나정균 팀원 | 루트 404만 확인, Swagger 미확인 | 실제 배포 후 |
 | 접수·부분 응답·종료·404·429 처리 검수 | 조정준 팀장, 나정균 팀원 | API 계약 공유, 개발계 통합 검증 미완료 | 실제 배포 후 |
 | 자막 기준의 기획 반영과 기존 #7 답변 | 미정 | manual 동작은 유지, 기획 정합성 정리는 이번 공유 밖 | PR #7 후속 정리 시 |
 
 API 키와 Access 서비스 토큰은 프론트 코드나 공개 문서에 넣지 않는다. 담당자 정보·일정을 확인하지 않은 항목은 추정해 확정하지 않는다.
+
+프론트 공개 배포 번들에서도 실 API 미구현 오류 문구를 확인했다. CORS 추가만으로 연결 완료가 되지는 않는다. 팀장님에게 전달할 Vite 설정은 `VITE_API_BASE_URL=https://conan-api-dev.dotseven.cloud`, `VITE_USE_MOCK=false`다. 접수·폴링 구현과 환경변수 반영 후 Vercel 재배포는 팀장님이 진행한다. 최신 전달 항목은 [BE 작업 브랜치의 연동 안내](https://github.com/Dynamic-Juo/be/blob/fix/midpoint-hardening/docs/frontend-integration.md)를 참고한다. 이 링크는 배포된 코드 버전을 뜻하지 않는다.
 
 ## 다음 공유 순서
 
