@@ -169,3 +169,15 @@ NLI, Cross Encoder, Reranker는 추가 조사 후보로 남긴다. 검색 결과
 3. 한국어 주장에 사용할 검색 수단과 접근 조건을 확인한다.
 4. 단계별 입출력 형식, 요청당 비용과 재시도 방식을 정한다.
 5. 모델 평가 결과를 바탕으로 기술 후보를 줄이고 [프로젝트 가정](../project/assumptions.md)을 갱신할 필요가 있는지 확인한다.
+
+## 9월 13일 기술 선택 반영
+
+[PR #5의 후속 답변](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3976434618)과 [PR #7의 LLM 선택 답변](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3999130461)을 반영한다. 기존 기술 후보 표는 초기 조사 목록이며 아래 채택 사실과 구분한다.
+
+- 영상·음성 확보는 yt-dlp, 음성 인식은 faster-whisper, 프레임 추출은 PyAV, 얼굴 검출은 MediaPipe, 얼굴 분류는 `dima806/deepfake_vs_real_image_detection`을 사용한다. 영상 전체 AI 생성 모델 선정 완료를 뜻하지 않는다.
+- LLM은 주장 추출과 근거 관계 판정에 사용한다. DeepSeek 연결은 구현됐으며 실제 사용 제공자는 배포 설정과 실행 기록으로 확인한다. NLI는 추가 후보다.
+- 국내 검색은 네이버 뉴스·백과사전 경로를 추가했다. 위키백과 및 설정에 따른 Google Fact Check 경로와 구분한다. BigKinds·KOSIS는 구현 완료로 기록하지 않는다.
+- 자막은 T-02에 따라 기본 미사용이며 선택적 API 경로만 남긴다. 현재 코드 기본값은 off다. 프레임 집계 기본값 trimmed_mean은 구현 선택이며 정확도가 개선됐다는 검증 결론은 아니다.
+- 주장별 검색·판정은 기본 3건 병렬이며 한 주장 안의 제공자 검색은 순차다. 제공자 병렬 확대는 비용·제한·시간을 확인한 뒤 정한다.
+
+구현과 배포의 대조는 [최신 점검](../evaluations/mvp-implementation-audit.md#2026-09-13-재점검)을 따른다. 모델 사용 조건과 품질이 모두 검증됐다는 의미로 채택 사실을 해석하지 않는다. 미결 항목은 [프로젝트 계획](../project/project-plan.md#9월-13일-리뷰-후속-작업)에서 관리한다.
