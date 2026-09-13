@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | 코드 통합 | CI/CD `43eae84`, 자막 정책 `1b58097`, 소스 문서 `6c795ab`을 통합했다. 새 CD Compose도 자막 기본값을 off로 수정했다. PR #3 최신 HEAD의 실제 CI 성공 후 main에 병합했다. | 신규 이미지 배포 |
 | 로컬 회귀 | 통합 코드 `e306349`에서 모의 테스트 691개가 통과했다. | 실영상·실제 제공자 검증은 별도 |
-| 실제 GitHub Actions | 첫 실행의 테스트 이미지 누락을 `7ae042a`에서 수정했다. [재실행](https://github.com/Dynamic-Juo/be/actions/runs/34726301566)에서 ARM64 빌드와 격리 테스트가 성공했다. | main 이미지 게시·서명과 호스트 검증은 별도 |
+| 실제 GitHub Actions | 첫 실행의 테스트 이미지 누락을 수정한 뒤 PR 검증이 성공했다. 병합 후 [main 실행](https://github.com/Dynamic-Juo/be/actions/runs/34733471394)에서도 ARM64 빌드·격리 테스트·동일 이미지 GHCR 게시·이미지와 릴리스 서명이 모두 성공했다. | 호스트의 서명 검증·새 이미지 실행은 별도 |
 | 승인형 배포 | 서명된 이미지·요청 검증과 drain·복구 컨트롤러가 구현돼 있다. [런북](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/development-cd-runbook.md)을 따른다. | Environment 승인자·보호 설정, 호스트 설치와 최초 전환은 미실행. GitHub에서 맥미니를 자동 호출하지 않음 |
 | 실제 영상·FE | 승인 후 기존 이미지에서 [실영상 1건](../evaluations/2026-09-13-deployed-video-check.md)이 25초에 종료됐다. STT 3단어·주장 0건이므로 검증 품질이나 제공자 성공을 확인한 것은 아니다. | 새 이미지 실영상·STT 품질·FE 연동 검수 |
 
