@@ -7,7 +7,7 @@
 
 ## 먼저 확인할 곳
 
-사용자는 백엔드 배포를 본인이 담당하며 제3자 승인 없이 main 병합 후 개발계 자동 배포를 요청했다. [BE PR #4](https://github.com/Dynamic-Juo/be/pull/4)에 성공한 main CI의 서명된 릴리스를 맥미니가 주기적으로 가져오는 코드와 완료 결과 영속 복원을 준비했다. 통합 모의 회귀는 722개 통과했다. launchd·전용 인증정보·최초 서버 전환은 미실행이므로 현재 자동 배포가 켜졌다는 뜻은 아니다. 상세 계약은 [자동 배포 런북](https://github.com/Dynamic-Juo/be/blob/7324502/docs/development-cd-runbook.md)을 따른다. 아래 PR #3의 제3자 승인형 구현은 기존 이력이며 신규 자동 모드의 사용자 결정과 구분한다.
+사용자는 백엔드 배포를 본인이 담당하며 제3자 승인 없이 main 병합 후 개발계 자동 배포를 요청했다. [BE PR #4](https://github.com/Dynamic-Juo/be/pull/4)의 자동 pull 코드와 완료 결과 영속 복원을 main `cf550f95c0dd6fc49631a2e824bc88bffc140fde`로 병합했다. 통합 모의 회귀 722개 및 [실제 PR ARM64 빌드·격리 테스트](https://github.com/Dynamic-Juo/be/actions/runs/34736248321)가 통과했다. launchd·전용 인증정보·최초 서버 전환은 미실행이므로 현재 자동 배포가 켜졌다는 뜻은 아니다. 새 main 이미지 게시 결과도 PR 빌드와 별도로 확인해야 한다. 상세 계약은 [자동 배포 런북](https://github.com/Dynamic-Juo/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/docs/development-cd-runbook.md)을 따른다. 아래 PR #3의 제3자 승인형 구현은 기존 이력이며 신규 자동 모드의 사용자 결정과 구분한다.
 
 2026-09-13 [BE PR #3](https://github.com/Dynamic-Juo/be/pull/3)을 main `513f53668ad633bb2de2360cb924645ce8318a58`로 병합했다. CI/CD 컨트롤러, 자막 기본 off와 선택 옵션, 소스 감사·파이프라인 문서를 통합했다. 병합은 서버 배포 완료를 뜻하지 않는다. 아래 PR #2와 서버 조회 수치는 9월 12일 기록이다.
 
