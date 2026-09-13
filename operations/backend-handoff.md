@@ -7,15 +7,15 @@
 
 ## 먼저 확인할 곳
 
-2026-09-13 통합 작업은 [BE PR #3](https://github.com/Dynamic-Juo/be/pull/3)에서 진행한다. CI/CD 컨트롤러, 자막 기본 off와 선택 옵션, 소스 감사·파이프라인 문서를 통합했다. PR 생성·코드 통합은 서버 배포 완료를 뜻하지 않는다. 아래 PR #2와 서버 조회 수치는 9월 12일 기록이다.
+2026-09-13 [BE PR #3](https://github.com/Dynamic-Juo/be/pull/3)을 main `513f53668ad633bb2de2360cb924645ce8318a58`로 병합했다. CI/CD 컨트롤러, 자막 기본 off와 선택 옵션, 소스 감사·파이프라인 문서를 통합했다. 병합은 서버 배포 완료를 뜻하지 않는다. 아래 PR #2와 서버 조회 수치는 9월 12일 기록이다.
 
 | 통합 항목 | 확인 결과 | 남은 확인 |
 | --- | --- | --- |
-| 코드 통합 | CI/CD `43eae84`, 자막 정책 `1b58097`, 소스 문서 `6c795ab`을 통합했다. 새 CD Compose도 자막 기본값을 off로 수정했다. | PR #3 검증과 main 병합 |
+| 코드 통합 | CI/CD `43eae84`, 자막 정책 `1b58097`, 소스 문서 `6c795ab`을 통합했다. 새 CD Compose도 자막 기본값을 off로 수정했다. PR #3 최신 HEAD의 실제 CI 성공 후 main에 병합했다. | 신규 이미지 배포 |
 | 로컬 회귀 | 통합 코드 `e306349`에서 모의 테스트 691개가 통과했다. | 실영상·실제 제공자 검증은 별도 |
 | 실제 GitHub Actions | 첫 실행의 테스트 이미지 누락을 `7ae042a`에서 수정했다. [재실행](https://github.com/Dynamic-Juo/be/actions/runs/34726301566)에서 ARM64 빌드와 격리 테스트가 성공했다. | main 이미지 게시·서명과 호스트 검증은 별도 |
 | 승인형 배포 | 서명된 이미지·요청 검증과 drain·복구 컨트롤러가 구현돼 있다. [런북](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/development-cd-runbook.md)을 따른다. | Environment 승인자·보호 설정, 호스트 설치와 최초 전환은 미실행. GitHub에서 맥미니를 자동 호출하지 않음 |
-| 실제 영상·FE | 이번 통합에서 실행하지 않았다. | 서버 조회·실영상 1회 실행 승인 및 FE 담당자의 연동 검수 |
+| 실제 영상·FE | 승인 후 기존 이미지에서 [실영상 1건](../evaluations/2026-09-13-deployed-video-check.md)이 25초에 종료됐다. STT 3단어·주장 0건이므로 검증 품질이나 제공자 성공을 확인한 것은 아니다. | 새 이미지 실영상·STT 품질·FE 연동 검수 |
 
 최신 [소스 감사](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/source-audit.md)와 [처리 흐름·프롬프트](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/pipeline.md)는 백엔드에서 관리한다. 감사의 당시 코드 기준과 통합 이후 변경을 구분한다. 원문 근거 수집, 영상 전체 AI 생성 모델, 공개 API 남용 방지와 강제 시간 제한의 미흡 사항은 이번 배포 코드 통합으로 해결되지 않았다. 논의는 [프로젝트 계획](../project/project-plan.md#리뷰-후속-추적)에서 추적한다.
 
