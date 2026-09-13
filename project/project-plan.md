@@ -83,6 +83,6 @@
 | 한국어 근거 공급자 | 조정준 팀장 | 나정균 팀원 | 최종 선택 미결 | T-08·T-09 검토 유지 | 기존 병렬 검색 항목과 함께 원문 확보·품질·호출 제한을 검증한다. | [#5](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3958432578) |
 | 주장 개수 상한 | 조정준 팀장 | 나정균 팀원 | 추후 논의, M-04 유지 | 미결 추적 추가 | 비용·지연 측정 후 팀장이 결정한다. | [후속 댓글](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3983806451) |
 | 여러 얼굴 판정 | 조정준 팀장 | 나정균 팀원 | 사용자 원문 확인 대기 | 기존 기준 유지 | 하나라도 이상이면 전체 이상이라는 규칙은 확인 후 반영한다. | [#7](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3958648232) |
-| 승인형 개발계 배포 | 나정균 팀원 | 나정균 팀원 | 도입 요청 확인, 서버 작업은 별도 승인 | [인수인계](../operations/backend-handoff.md) 연결 | 실제 Actions, 승인자·보호 설정, 호스트 최초 전환, 실영상 검증이 남아 있다. | [BE #3](https://github.com/Dynamic-Juo/be/pull/3) |
+| main 자동 개발계 배포 | 나정균 팀원 | 나정균 팀원 | 본인 main 병합 후 자동 배포 요청 확인, 제3자 승인 미채택 | [인수인계](../operations/backend-handoff.md) 연결 | 기존 main Actions 게시·서명 성공. PR #4의 자동 모드·결과 보존은 전용 인증과 호스트 최초 전환·실제 복원 검증 전이다. | [BE #4](https://github.com/Dynamic-Juo/be/pull/4) |
 
 원문 근거 수집·판정 품질, 영상 전체 AI 생성 탐지 미구현, 공개 API 보호와 강제 시간 제한은 [소스 감사](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/source-audit.md)의 잔여 항목이다. 구현 감사가 새 MVP 범위 결정을 대신하지 않는다. 담당은 백엔드 나정균 팀원이며 제품 범위 변경이 필요하면 조정준 팀장에게 별도 확인한다. 완료 시점은 미정이다.

@@ -7,6 +7,8 @@
 
 ## 먼저 확인할 곳
 
+사용자는 백엔드 배포를 본인이 담당하며 제3자 승인 없이 main 병합 후 개발계 자동 배포를 요청했다. [BE PR #4](https://github.com/Dynamic-Juo/be/pull/4)에 성공한 main CI의 서명된 릴리스를 맥미니가 주기적으로 가져오는 코드와 완료 결과 영속 복원을 준비했다. 통합 모의 회귀는 722개 통과했다. launchd·전용 인증정보·최초 서버 전환은 미실행이므로 현재 자동 배포가 켜졌다는 뜻은 아니다. 상세 계약은 [자동 배포 런북](https://github.com/Dynamic-Juo/be/blob/7324502/docs/development-cd-runbook.md)을 따른다. 아래 PR #3의 제3자 승인형 구현은 기존 이력이며 신규 자동 모드의 사용자 결정과 구분한다.
+
 2026-09-13 [BE PR #3](https://github.com/Dynamic-Juo/be/pull/3)을 main `513f53668ad633bb2de2360cb924645ce8318a58`로 병합했다. CI/CD 컨트롤러, 자막 기본 off와 선택 옵션, 소스 감사·파이프라인 문서를 통합했다. 병합은 서버 배포 완료를 뜻하지 않는다. 아래 PR #2와 서버 조회 수치는 9월 12일 기록이다.
 
 | 통합 항목 | 확인 결과 | 남은 확인 |
@@ -14,7 +16,7 @@
 | 코드 통합 | CI/CD `43eae84`, 자막 정책 `1b58097`, 소스 문서 `6c795ab`을 통합했다. 새 CD Compose도 자막 기본값을 off로 수정했다. PR #3 최신 HEAD의 실제 CI 성공 후 main에 병합했다. | 신규 이미지 배포 |
 | 로컬 회귀 | 통합 코드 `e306349`에서 모의 테스트 691개가 통과했다. | 실영상·실제 제공자 검증은 별도 |
 | 실제 GitHub Actions | 첫 실행의 테스트 이미지 누락을 수정한 뒤 PR 검증이 성공했다. 병합 후 [main 실행](https://github.com/Dynamic-Juo/be/actions/runs/34733471394)에서도 ARM64 빌드·격리 테스트·동일 이미지 GHCR 게시·이미지와 릴리스 서명이 모두 성공했다. | 호스트의 서명 검증·새 이미지 실행은 별도 |
-| 승인형 배포 | 서명된 이미지·요청 검증과 drain·복구 컨트롤러가 구현돼 있다. [런북](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/development-cd-runbook.md)을 따른다. | Environment 승인자·보호 설정, 호스트 설치와 최초 전환은 미실행. GitHub에서 맥미니를 자동 호출하지 않음 |
+| 개발계 자동 배포 | 사용자 요청에 따라 PR #4에서 제3자 승인 대신 성공한 main CI와 릴리스 서명을 확인하는 자동 모드로 전환한다. 완료 결과를 보존하고 진행 작업 drain 후 단일 서비스를 교체한다. | 전용 Actions/Contents read 인증, 호스트 설치·최초 전환·실제 교체 및 복원 검증 필요 |
 | 실제 영상·FE | 승인 후 기존 이미지에서 [실영상 1건](../evaluations/2026-09-13-deployed-video-check.md)이 25초에 종료됐다. STT 3단어·주장 0건이므로 검증 품질이나 제공자 성공을 확인한 것은 아니다. | 새 이미지 실영상·STT 품질·FE 연동 검수 |
 
 최신 [소스 감사](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/source-audit.md)와 [처리 흐름·프롬프트](https://github.com/Dynamic-Juo/be/blob/7ae042a/docs/pipeline.md)는 백엔드에서 관리한다. 감사의 당시 코드 기준과 통합 이후 변경을 구분한다. 원문 근거 수집, 영상 전체 AI 생성 모델, 공개 API 남용 방지와 강제 시간 제한의 미흡 사항은 이번 배포 코드 통합으로 해결되지 않았다. 논의는 [프로젝트 계획](../project/project-plan.md#리뷰-후속-추적)에서 추적한다.
