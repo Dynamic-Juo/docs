@@ -80,8 +80,8 @@
 | DeepSeek 데이터 취급 | 전달하는 발언·근거 데이터의 범위, 보관·학습 이용 조건을 공식 자료와 계정 설정으로 확인한다. | 나정균 팀원 | 확인 필요 | 공개 전. 날짜 미정 | [DeepSeek 확인 항목](../evaluations/license-and-terms.md) |
 | 검색 API·LLM 비용 | Google 키 설정 여부와 NAVER 계정별 한도·실제 청구를 확인하고 반복 검색·재시도·LLM 토큰을 포함한 요청당 비용을 기록한다. | 나정균 팀원 | 미측정 항목 확인 필요 | 부하·인수 검수 시. 날짜 미정 | [비용 기록](../evaluations/license-and-terms.md) |
 | 결과 캐시·영속 저장 | 1차는 결과 재사용 캐시 없이 진행한다. 완료 결과 보존·복원과 진행 작업 중복 접수는 캐시 제공과 구분한다. 저장 기간은 운영 정책에서 정한다. | 나정균 팀원 | 1차 캐시 제외 결정, 보관 검증 대기 | 배포 전환 시. 날짜 미정 | [캐시 결정](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3958840302) |
-| 배포·홈서버 보호 | 9월 13일 점검본 472aff7과 최신 코드의 차이를 확인해 검증 이미지 전환·권한 축소·결과 보존·내부망 및 자원 경계를 검수한다. 다른 서비스의 실행 상태와 보안 검증은 구분한다. | 나정균 팀원 | 설정 감사 완료, 전환·경계 검수 대기 | 공개 전. 날짜 미정 | [배포 감사](https://github.com/Dynamic-Juo/be/blob/docs/server-isolation/docs/deployment-isolation-audit-2026-09-13.md) |
-| 서비스명·Origin 전환 | 새 프론트 https://chamsae-ai.vercel.app/에 README·API·CORS·배포 문서를 맞추고 접수·조회까지 검증한다. 내부 저장소·볼륨 이름 변경과 구분한다. | 나정균 팀원 | 정비 중 | 2026-09-14 작업 | 나정균 팀원의 2026-09-14 요청 |
+| 배포·홈서버 보호 | 운영 472aff7에서 Laravel·Redis·맥미니 SSH 접근이 가능했다. 별도 내부망·허용 출구 시험에서 차단을 검증했고 비특권 이미지 CI도 통과했다. 운영 전환·결과 복원·전용 Tunnel·강제 종료 검수를 이어간다. | 나정균 팀원 | 격리 시험 완료, 운영 미적용 | 공개 전. 날짜 미정 | [9월 14일 실제 검사](https://github.com/Dynamic-Juo/be/blob/e38a932/docs/deployment-isolation-audit-2026-09-14.md) |
+| 서비스명·Origin 전환 | 서비스명 참새와 새 프론트 https://chamsae-ai.vercel.app/에 BE README·API·배포 문서를 맞춘다. FE 코드·Vercel 설정은 팀장 담당이며 BE는 계약·검수 조건만 전달한다. 내부 저장소·볼륨 이름 변경과 구분한다. | 나정균 팀원(BE), 조정준 팀장(FE·Vercel) | BE 표기 정리, 운영 연동 미완료 | 연동 검수 시. 날짜 미정 | [BE #5](https://github.com/Dynamic-Juo/be/pull/5) |
 | 일반 사용자 공개 | 이메일 허용 목록 밖 사용자도 이용하도록 Vercel 서버 전달·봇 확인·영속 한도·결과 조회 토큰을 준비했다. FE 연결·실제 정책·홈서버 경계 검수 뒤 활성화한다. Cloudflare Access 해제만으로 완료하지 않는다. | 나정균 팀원 | BE c693f7c 구현·모의 검증, 초안 PR. 미배포 | 보안·연동 검수 후. 날짜 미정 | [BE #5](https://github.com/Dynamic-Juo/be/pull/5), [공개 계약](https://github.com/Dynamic-Juo/be/blob/76615b3/docs/public-access.md) |
 
 나정균 팀원은 9월 11일까지 API를 배포하고, 조정준 팀장은 9월 12일까지 mock 연결과 배포를 마친다. 9월 13일에 만나서 FE와 BE를 연결하고 MVP 테스트와 1차 제출을 함께 진행한다. 시간을 조율하며 진행 가능한 날짜가 바뀌어 기존 9월 12일 일정을 13일로 옮겼다.
