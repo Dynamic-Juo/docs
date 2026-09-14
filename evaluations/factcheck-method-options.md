@@ -121,7 +121,7 @@ BigKinds와 네이버는 다른 서비스다. [BigKinds 질문](https://github.c
 
 ## 후속 결정의 관리 위치
 
-LLM 도입과 네이버 검색 연결에 관한 답변은 [PR #5](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3976434618)와 [PR #7](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3999130461)에 남아 있다. 설계 반영은 [AI 파이프라인](../design/ai-pipeline.md), 미결 후보·측정·사용 조건은 [프로젝트 계획](../project/project-plan.md#9월-13일-리뷰-후속-작업)에서 관리한다. 이 평가 문서의 후보 비교를 구현 지시로 사용하지 않는다.
+LLM 도입과 네이버 검색 연결에 관한 답변은 [PR #5](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3976434618)와 [PR #7](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3999130461)에 남아 있다. 설계 반영은 [AI 파이프라인](../design/ai-pipeline.md), 미결 후보·측정·사용 조건은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)에서 관리한다. 이 평가 문서의 후보 비교를 구현 지시로 사용하지 않는다.
 
 ---
 

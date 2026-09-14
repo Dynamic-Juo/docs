@@ -6,6 +6,10 @@
 
 현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다. MVP 결정 기록과 남은 기술 검증 항목은 [MVP 검토 목록](project/mvp-review.md)에 모았다.
 
+현재 프론트 배포 주소는 [서비스 접속](https://chamsae-ai.vercel.app/)이다. 기존 kimjeonil.vercel.app에서 변경됐다. 이 주소 변경만으로 API CORS나 Cloudflare Access 정책이 바뀌지는 않는다.
+
+문서 검토 이력은 [PR·댓글·커밋 순서](project/docs-review-history.md), 남은 작업은 [프로젝트 계획](project/project-plan.md#미결-사항과-일정-확인)에서 확인한다.
+
 ## 팀 구성
 
 | 이름 | 직책 |
@@ -55,6 +59,14 @@
 Skill 원본은 `.agents/skills/`에 두고 `.claude/skills/`에는 같은 이름의 심볼릭 링크를 둔다. 도구마다 Skill을 찾는 경로가 달라 두 경로가 모두 필요하지만, 내용은 원본 한 곳에서만 관리한다. 링크는 상대 경로로 걸어 저장소 위치와 무관하게 동작한다. `CLAUDE.md`도 같은 이유로 `AGENTS.md`를 가리키는 심볼릭 링크이며, 문서 작성 규칙 본문은 `AGENTS.md`에만 둔다.
 
 `project/prd.md`, `project/project-plan.md`, `project/mvp-review.md`, `design/ai-pipeline.md`, `design/analysis-runtime.md`와 `design/result-ui.md`는 초안을 작성 중이다. `project/assumptions.md`와 `design/evidence-policy.md`는 합의한 현재 기준으로 사용한다. 나머지 예정 문서는 필요한 시점에 생성한다. 빈 디렉터리나 내용 없는 문서를 구조 유지 목적으로 추가하지 않는다.
+
+## 리뷰 약속 반영
+
+PR·댓글·커밋을 대조하고 기준 문서·미결 표·충돌을 정리할 때 [reconcile-docs 스킬](.agents/skills/reconcile-docs/SKILL.md)을 사용한다. 원본은 `.agents/skills/reconcile-docs`이며 `.claude/skills/reconcile-docs`도 같은 파일을 참조한다. 문서 링크·절·표·연속 빈 줄 검사는 저장소 루트에서 다음과 같이 실행한다.
+
+```bash
+python3 .agents/skills/reconcile-docs/scripts/check_docs.py --base origin/main
+```
 
 ## 문서별 책임
 
