@@ -6,9 +6,7 @@
 
 현재 일정과 진행 현황은 [프로젝트 계획](project/project-plan.md)에서 확인한다. MVP 결정 기록과 남은 기술 검증 항목은 [MVP 검토 목록](project/mvp-review.md)에 모았다.
 
-현재 프론트 배포 주소는 [서비스 접속](https://chamsae-ai.vercel.app/)이다. 기존 kimjeonil.vercel.app에서 변경됐다. 이 주소 변경만으로 API CORS나 Cloudflare Access 정책이 바뀌지는 않는다.
-
-문서 검토 이력은 [PR·댓글·커밋 순서](project/docs-review-history.md), 남은 작업은 [프로젝트 계획](project/project-plan.md#미결-사항과-일정-확인)에서 확인한다.
+현재 프론트 배포 주소는 [서비스 접속](https://chamsae-ai.vercel.app/)이다.
 
 ## 팀 구성
 
