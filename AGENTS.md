@@ -1,5 +1,9 @@
 # Conan AI 문서 저장소 지침
 
+## 리뷰 반영 작업
+
+PR·댓글의 결정 반영이나 문서 충돌 해결을 시작할 때 [.agents/skills/reconcile-docs/SKILL.md](.agents/skills/reconcile-docs/SKILL.md)를 읽는다. 작업 추적은 기존 미결 표 하나로 유지하며, 현재 기준 본문을 직접 갱신한다.
+
 ## 문서 기준
 
 - 문서 구조, 책임과 분리 기준, 브랜치 운영 규칙은 `README.md`를 따른다.
