@@ -3,8 +3,8 @@
 - 실험일: 2026-09-10
 - 문서 반영일: 2026-09-14
 - 기록자: 나정균 팀원
-- 원본: [백엔드 작업 로그](https://github.com/Dynamic-Juo/be/blob/ff5033d/docs/worklog.md)
-- 발의: [PR #4 절사평균 제안](https://github.com/Dynamic-Juo/docs/pull/4#discussion_r3975137433)
+- 원본: [백엔드 작업 로그](https://github.com/chamsae-ai/be/blob/ff5033d/docs/worklog.md)
+- 발의: [PR #4 절사평균 제안](https://github.com/chamsae-ai/docs/pull/4#discussion_r3975137433)
 
 ## 조건과 측정 범위
 
@@ -29,4 +29,4 @@
 
 해당 두 표본에서는 절사평균이 뉴스의 높은 일부 프레임 점수 영향을 줄였다. 전체 표본 수는 2편이며, 한 구간에만 실제 조작이 있는 영상의 고점을 제거할 위험은 검증하지 못했다. 따라서 일반적인 정확도 개선이나 탐지 범위 충족을 결론내리지 않는다.
 
-현재 코드 기본 집계는 최솟값·최댓값 각 하나를 제외한 평균이며 성공 점수가 3개 미만이면 평균을 쓴다. 과거 무얼굴 점수 혼입 문제와 최신 코드의 처리 범위는 [백엔드 파이프라인](https://github.com/Dynamic-Juo/be/blob/cf550f9/docs/pipeline.md)을 따른다. 확대 검증의 담당자·확인 시점은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)의 절사평균 항목에서 관리한다.
+현재 코드 기본 집계는 최솟값·최댓값 각 하나를 제외한 평균이며 성공 점수가 3개 미만이면 평균을 쓴다. 과거 무얼굴 점수 혼입 문제와 최신 코드의 처리 범위는 [백엔드 파이프라인](https://github.com/chamsae-ai/be/blob/cf550f9/docs/pipeline.md)을 따른다. 확대 검증의 담당자·확인 시점은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)의 절사평균 항목에서 관리한다.

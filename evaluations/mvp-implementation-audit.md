@@ -2,12 +2,12 @@
 
 - 점검일: 2026-09-08
 - 점검자: 나정균 팀원
-- 점검 대상: `Dynamic-Juo/be` (커밋 `cfe37fc`)
+- 점검 대상: `chamsae-ai/be` (커밋 `cfe37fc`)
 - 기준 문서: [MVP 검토 목록](../project/mvp-review.md), [제품 요구사항](../project/prd.md), [AI 파이프라인](../design/ai-pipeline.md), [분석 실행 구조](../design/analysis-runtime.md), [분석 결과 UI](../design/result-ui.md)
 
 ## 2026-09-13 재점검
 
-9월 8일 표는 `be cfe37fc`의 당시 평가다. 아래 미구현 표시를 현재 백엔드의 상태로 사용하지 않는다. 제품 기준은 병합된 docs `8d07ff3`, 구현 기준은 be `cf550f9`, 운영 기준은 [9월 13일 맥미니 점검](https://github.com/Dynamic-Juo/be/blob/dd6048069b0223bb973d2a505b2e6896f9e164dc/docs/deployment-isolation-audit-2026-09-13.md)의 `472aff7`이다. 코드 확인과 실제 배포 확인을 구분한다.
+9월 8일 표는 `be cfe37fc`의 당시 평가다. 아래 미구현 표시를 현재 백엔드의 상태로 사용하지 않는다. 제품 기준은 병합된 docs `8d07ff3`, 구현 기준은 be `cf550f9`, 운영 기준은 [9월 13일 맥미니 점검](https://github.com/chamsae-ai/be/blob/dd6048069b0223bb973d2a505b2e6896f9e164dc/docs/deployment-isolation-audit-2026-09-13.md)의 `472aff7`이다. 코드 확인과 실제 배포 확인을 구분한다.
 
 | 항목 | 최신 코드에서 확인한 사실 | 남은 검증·작업 |
 | --- | --- | --- |
@@ -18,7 +18,7 @@
 | 입력·운영 보호 | YouTube URL 검사, 디버그 목록 기본 비활성화, 완료 결과 영속 저장과 배포 제어 코드가 추가됐다. | 구형 배포본 교체·복원 시험. 저장소 구현을 운영 반영 완료로 쓰지 않음 |
 | 사용자 연동 | 나정균 팀원이 Vercel에서 최종 결과까지 확인했다고 보고했다. | #10의 사전 기대값 기반 인수 검수와는 별개임 |
 
-근거: [프롬프트](https://github.com/Dynamic-Juo/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/deepcheck/prompts.py), [주장 처리](https://github.com/Dynamic-Juo/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/deepcheck/claims.py), [설정](https://github.com/Dynamic-Juo/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/deepcheck/config.py). 새 실영상 분석은 이 문서 수정 중 실행하지 않았다.
+근거: [프롬프트](https://github.com/chamsae-ai/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/deepcheck/prompts.py), [주장 처리](https://github.com/chamsae-ai/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/deepcheck/claims.py), [설정](https://github.com/chamsae-ai/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/deepcheck/config.py). 새 실영상 분석은 이 문서 수정 중 실행하지 않았다.
 
 현재 실행 순서와 미결 사항은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)에서 관리한다. #9의 UI·지원 범위와 #10의 인수 점검표는 2026-09-14 KST에 main으로 병합됐다. #11의 전체 AI 생성 탐지 제외·업로더 표기는 별도 검토 중이다.
 

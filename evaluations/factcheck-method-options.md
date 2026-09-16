@@ -8,7 +8,7 @@
 
 이 문서는 2026-09-08 도입 전 후보 비교 기록이다. 아래의 현재·추천 표현은 당시 상황을 뜻한다. 이후 네이버 검색과 LLM 추출·판정을 도입했으며 [현재 구현 점검](mvp-implementation-audit.md#2026-09-13-재점검)과 [AI 파이프라인](../design/ai-pipeline.md)을 우선한다. NLI·BigKinds·KOSIS는 채택 완료 항목이 아니다.
 
-BigKinds와 네이버는 다른 서비스다. [BigKinds 질문](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3958515672)에 대한 네이버 API 답변으로 BigKinds 접근 조건이 확인된 것은 아니다. 후보의 현재 접근 조건은 채택 전 공식 자료와 실제 계정으로 다시 확인해야 한다.
+BigKinds와 네이버는 다른 서비스다. [BigKinds 질문](https://github.com/chamsae-ai/docs/pull/7#discussion_r3958515672)에 대한 네이버 API 답변으로 BigKinds 접근 조건이 확인된 것은 아니다. 후보의 현재 접근 조건은 채택 전 공식 자료와 실제 계정으로 다시 확인해야 한다.
 
 ## 왜 이 검토가 필요한가
 
@@ -121,7 +121,7 @@ BigKinds와 네이버는 다른 서비스다. [BigKinds 질문](https://github.c
 
 ## 후속 결정의 관리 위치
 
-LLM 도입과 네이버 검색 연결에 관한 답변은 [PR #5](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3976434618)와 [PR #7](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3999130461)에 남아 있다. 설계 반영은 [AI 파이프라인](../design/ai-pipeline.md), 미결 후보·측정·사용 조건은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)에서 관리한다. 이 평가 문서의 후보 비교를 구현 지시로 사용하지 않는다.
+LLM 도입과 네이버 검색 연결에 관한 답변은 [PR #5](https://github.com/chamsae-ai/docs/pull/5#discussion_r3976434618)와 [PR #7](https://github.com/chamsae-ai/docs/pull/7#discussion_r3999130461)에 남아 있다. 설계 반영은 [AI 파이프라인](../design/ai-pipeline.md), 미결 후보·측정·사용 조건은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)에서 관리한다. 이 평가 문서의 후보 비교를 구현 지시로 사용하지 않는다.
 
 ---
 

@@ -172,7 +172,7 @@ NLI, Cross Encoder, Reranker는 추가 조사 후보로 남긴다. 검색 결과
 
 ## 9월 13일 기술 선택 반영
 
-[PR #5의 후속 답변](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3976434618)과 [PR #7의 LLM 선택 답변](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3999130461)을 반영한다. 기존 기술 후보 표는 초기 조사 목록이며 아래 채택 사실과 구분한다.
+[PR #5의 후속 답변](https://github.com/chamsae-ai/docs/pull/5#discussion_r3976434618)과 [PR #7의 LLM 선택 답변](https://github.com/chamsae-ai/docs/pull/7#discussion_r3999130461)을 반영한다. 기존 기술 후보 표는 초기 조사 목록이며 아래 채택 사실과 구분한다.
 
 - 영상·음성 확보는 yt-dlp, 음성 인식은 faster-whisper, 프레임 추출은 PyAV, 얼굴 검출은 MediaPipe, 얼굴 분류는 `dima806/deepfake_vs_real_image_detection`을 사용한다. 영상 전체 AI 생성 모델 선정 완료를 뜻하지 않는다.
 - LLM은 주장 추출과 근거 관계 판정에 사용한다. DeepSeek 연결은 구현됐으며 실제 사용 제공자는 배포 설정과 실행 기록으로 확인한다. NLI는 추가 후보다.

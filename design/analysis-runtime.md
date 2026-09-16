@@ -72,7 +72,7 @@ flowchart TD
     C3 --> NEXT
 ```
 
-두 결과 축은 판정상 독립이지만 현재 계산 경로 전체가 병렬이라는 뜻은 아니다. 실제 처리 순서는 [백엔드 파이프라인](https://github.com/Dynamic-Juo/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/docs/pipeline.md)을 따른다. 제공자 병렬 확대와 최신 환경 측정은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)의 해당 항목에서 추적한다.
+두 결과 축은 판정상 독립이지만 현재 계산 경로 전체가 병렬이라는 뜻은 아니다. 실제 처리 순서는 [백엔드 파이프라인](https://github.com/chamsae-ai/be/blob/cf550f95c0dd6fc49631a2e824bc88bffc140fde/docs/pipeline.md)을 따른다. 제공자 병렬 확대와 최신 환경 측정은 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)의 해당 항목에서 추적한다.
 
 ## 작업 상태
 
@@ -105,7 +105,7 @@ flowchart TD
 
 ## 분석 결과 캐시
 
-1차 MVP는 [캐시 제외 결정](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3958840302)에 따라 완료 결과를 다른 분석 요청에 재사용하는 캐시 없이 진행한다. 다시 분석은 새 작업이며, 진행 중 작업의 중복 접수 제어와 완료 결과 보존·복원은 캐시와 구분한다.
+1차 MVP는 [캐시 제외 결정](https://github.com/chamsae-ai/docs/pull/7#discussion_r3958840302)에 따라 완료 결과를 다른 분석 요청에 재사용하는 캐시 없이 진행한다. 다시 분석은 새 작업이며, 진행 중 작업의 중복 접수 제어와 완료 결과 보존·복원은 캐시와 구분한다.
 
 향후 캐시를 도입할 때에는 영상 ID·파이프라인 버전·분석 옵션·유효기간·공개 상태 재확인과 강제 재분석 계약을 정한다. 완료 결과 보관 기간과 캐시 도입 검토는 [프로젝트 계획](../project/project-plan.md#미결-사항과-일정-확인)에서 추적한다.
 
