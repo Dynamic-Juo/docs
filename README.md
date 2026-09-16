@@ -1,6 +1,6 @@
-# Conan AI (가제) 문서
+# 참새 AI 문서
 
-이 저장소는 YouTube 영상의 미디어 조작 가능성과 영상 속 주장의 사실성을 분석하는 Conan AI (가제)의 기획, 설계, 검증 및 의사결정 기록을 관리한다.
+이 저장소는 YouTube 영상의 미디어 조작 가능성과 영상 속 주장의 사실성을 분석하는 참새 AI의 기획, 설계, 검증 및 의사결정 기록을 관리한다.
 
 프로젝트는 [Wanted AI Championship 2026](https://event.wanted.co.kr/ai-championship/2026) 출품을 목표로 진행한다.
 

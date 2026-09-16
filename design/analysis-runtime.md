@@ -1,4 +1,4 @@
-# Conan AI (가제) 분석 실행 구조와 확장 기준
+# 참새 AI 분석 실행 구조와 확장 기준
 
 - 상태: `Draft`
 - 관련 문서: [제품 요구사항](../project/prd.md), [MVP 검토 목록](../project/mvp-review.md), [AI 파이프라인](ai-pipeline.md), [분석 결과 UI](result-ui.md), [프로젝트 계획](../project/project-plan.md)

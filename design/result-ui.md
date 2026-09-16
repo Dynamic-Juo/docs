@@ -1,4 +1,4 @@
-# Conan AI (가제) 분석 진행과 결과 UI 흐름
+# 참새 AI 분석 진행과 결과 UI 흐름
 
 - 상태: `Draft`
 - 관련 문서: [제품 요구사항](../project/prd.md), [MVP 검토 목록](../project/mvp-review.md), [AI 파이프라인](ai-pipeline.md), [분석 실행 구조](analysis-runtime.md), [프로젝트 계획](../project/project-plan.md)
