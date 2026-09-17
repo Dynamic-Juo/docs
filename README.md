@@ -64,7 +64,9 @@
 │   └── meeting.md                   # 회의록 템플릿
 ├── meetings/                        # 회의별 논의와 결정 기록
 │   ├── 2026-09-03-kickoff.md
-│   └── 2026-09-05-progress.md
+│   ├── 2026-09-05-progress.md
+│   ├── 2026-09-11-progress.md
+│   └── 2026-09-13-integration.md
 └── adr/                             # 확정된 주요 기술 결정 (예정)
 ```
 
