@@ -32,7 +32,7 @@
 
 ```mermaid
 flowchart LR
-    USER["사용자"] -->|"YouTube Shorts URL"| API["웹 API 서버"]
+    USER["사용자"] -->|"YouTube 영상 URL"| API["웹 API 서버"]
     API -->|"jobId 발급"| USER
     API --> QUEUE["분석 작업 대기열"]
     QUEUE --> WORKER["분석 Worker"]
