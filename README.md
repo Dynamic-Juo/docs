@@ -1,6 +1,6 @@
-# Conan AI (가제) 문서
+# 참새 AI 문서
 
-이 저장소는 YouTube 영상의 미디어 조작 가능성과 영상 속 주장의 사실성을 분석하는 Conan AI (가제)의 기획, 설계, 검증 및 의사결정 기록을 관리한다.
+이 저장소는 YouTube 영상의 미디어 조작 가능성과 영상 속 주장의 사실성을 분석하는 참새 AI의 기획, 설계, 검증 및 의사결정 기록을 관리한다.
 
 프로젝트는 [Wanted AI Championship 2026](https://event.wanted.co.kr/ai-championship/2026) 출품을 목표로 진행한다.
 
@@ -30,10 +30,14 @@
 │       │   └── SKILL.md
 │       ├── pr/
 │       │   └── SKILL.md
+│       ├── reconcile-docs/
+│       │   └── SKILL.md
 │       └── refine-doc/
 │           └── SKILL.md
 ├── .claude/
 │   └── skills/                     # .agents/skills 의 각 Skill을 가리키는 심볼릭 링크
+├── .github/
+│   └── pull_request_template.md    # 문서 PR 본문 틀
 ├── .vscode/
 │   └── settings.json               # 마크다운 저장 시 포맷 비활성화
 ├── project/                         # 제품 범위와 프로젝트 운영 기준
@@ -47,11 +51,21 @@
 │   ├── analysis-runtime.md          # 분석 실행 구조, 상태, 처리량과 확장 기준
 │   ├── evidence-policy.md           # 주장 근거 선택, 출처 충돌과 판정 기준
 │   └── result-ui.md                 # 분석 진행, 순차 결과와 최종 요약 UI 흐름
+├── evaluations/                     # 모델·기능 테스트와 점검 기록
+│   ├── claim-verification-pipeline.md
+│   ├── deepfake-detection-model-comparison.md
+│   ├── factcheck-method-options.md
+│   ├── frame-aggregation-comparison.md
+│   ├── implementation-notes.md
+│   ├── license-and-terms.md
+│   ├── mvp-acceptance.md
+│   └── mvp-implementation-audit.md
 ├── templates/                       # 반복 작성하는 문서의 공통 골격
 │   └── meeting.md                   # 회의록 템플릿
 ├── meetings/                        # 회의별 논의와 결정 기록
-│   └── 2026-09-03-kickoff.md
-└── adr/                             # 확정된 주요 기술 결정
+│   ├── 2026-09-03-kickoff.md
+│   └── 2026-09-05-progress.md
+└── adr/                             # 확정된 주요 기술 결정 (예정)
 ```
 
 Skill 원본은 `.agents/skills/`에 두고 `.claude/skills/`에는 같은 이름의 심볼릭 링크를 둔다. 도구마다 Skill을 찾는 경로가 달라 두 경로가 모두 필요하지만, 내용은 원본 한 곳에서만 관리한다. 링크는 상대 경로로 걸어 저장소 위치와 무관하게 동작한다. `CLAUDE.md`도 같은 이유로 `AGENTS.md`를 가리키는 심볼릭 링크이며, 문서 작성 규칙 본문은 `AGENTS.md`에만 둔다.
@@ -79,6 +93,7 @@ python3 .agents/skills/reconcile-docs/scripts/check_docs.py --base origin/main
 | `design/analysis-runtime.md` | 작업 대기열과 Worker, 실행 상태, 동시 처리, 성능 측정과 확장 기준 | 단계별 분석 방법, 제품 요구사항 원문 |
 | `design/evidence-policy.md` | 주장과 근거의 관련성·시점·출처 확인, 판정과 출처 충돌 처리 기준 | 검색·판정 기술 선정, 모델별 실험 결과 |
 | `design/result-ui.md` | 진행 상태, 주장 카드의 순차 갱신, 미디어 조작 결과와 최종 요약 흐름 | API·모델 구현 상세, 제품 요구사항 원문 |
+| `evaluations/` | 모델·기능 테스트 결과, 점검과 인수 기록, 사용 조건 확인 | 제품 결정의 기준 원문, 일정별 진행 현황 |
 | `meetings/` | 회의 시점의 논의, 결정 사항, 미결 사항, 액션 아이템 | 변경되는 최신 일정과 제품 기준 |
 | `adr/` | 되돌리기 어렵거나 영향 범위가 큰 기술 결정과 근거 | 후보 기술 전체의 상세 비교, 회의 전체 내용 |
 | `templates/` | 반복 작성하는 문서의 필수 항목과 공통 구조 | 프로젝트의 실제 내용과 확정된 결정 |

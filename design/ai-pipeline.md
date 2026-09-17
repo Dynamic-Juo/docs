@@ -1,4 +1,4 @@
-# Conan AI (가제) AI 파이프라인
+# 참새 AI 파이프라인
 
 - 상태: `Draft`
 - 구조·파이프라인 설계 담당: 조정준 팀장
@@ -7,7 +7,7 @@
 
 ## 문서의 기준
 
-Conan AI (가제)의 초기 자료조사 및 기획 시안을 바탕으로 처리 흐름과 기술 후보를 구체화한 설계 초안이다. 제품의 목적과 범위는 제품 요구사항을 참조한다.
+참새 AI의 초기 자료조사 및 기획 시안을 바탕으로 처리 흐름과 기술 후보를 구체화한 설계 초안이다. 제품의 목적과 범위는 제품 요구사항을 참조한다.
 
 아래 흐름은 설계 기준이며 기술 후보 표는 초기 조사 목록이다. 실제 기술 선택은 [기술 선택 반영](#9월-13일-기술-선택-반영)을 따른다. 기술 후보의 링크는 초기 조사 과정에서 수집했으며, 최신 기능·라이선스·성능을 원문과 대조하지 않았다.
 
@@ -172,7 +172,7 @@ NLI, Cross Encoder, Reranker는 추가 조사 후보로 남긴다. 검색 결과
 
 ## 9월 13일 기술 선택 반영
 
-[PR #5의 후속 답변](https://github.com/Dynamic-Juo/docs/pull/5#discussion_r3976434618)과 [PR #7의 LLM 선택 답변](https://github.com/Dynamic-Juo/docs/pull/7#discussion_r3999130461)을 반영한다. 기존 기술 후보 표는 초기 조사 목록이며 아래 채택 사실과 구분한다.
+[PR #5의 후속 답변](https://github.com/chamsae-ai/docs/pull/5#discussion_r3976434618)과 [PR #7의 LLM 선택 답변](https://github.com/chamsae-ai/docs/pull/7#discussion_r3999130461)을 반영한다. 기존 기술 후보 표는 초기 조사 목록이며 아래 채택 사실과 구분한다.
 
 - 영상·음성 확보는 yt-dlp, 음성 인식은 faster-whisper, 프레임 추출은 PyAV, 얼굴 검출은 MediaPipe, 얼굴 분류는 `dima806/deepfake_vs_real_image_detection`을 사용한다. 영상 전체 AI 생성 모델 선정 완료를 뜻하지 않는다.
 - LLM은 주장 추출과 근거 관계 판정에 사용한다. DeepSeek 연결은 구현됐으며 실제 사용 제공자는 배포 설정과 실행 기록으로 확인한다. NLI는 추가 후보다.
